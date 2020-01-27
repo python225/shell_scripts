@@ -1,0 +1,34 @@
+
+#creating ansible user
+useradd ansible 
+passwd ansible
+
+#adding sudo permissions to ansible
+
+go to root and add this
+
+visudo
+
+## Allows people in group wheel to run all commands
+# %wheel        ALL=(ALL)       ALL
+
+#uncomment this wheel group 
+
+add ansible user to wheel group 
+
+usermod -aG wheel ansible 
+
+switch user to ansible 
+su ansible -a 
+
+check the group 
+groups 
+
+ansible will be in wheel group 
+
+try to install the packages from ansible user. now it will be able to install the packages.
+
+
+==============================================================================================================================
+
+
