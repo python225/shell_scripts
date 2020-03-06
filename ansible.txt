@@ -1,0 +1,23 @@
+ansible commands 
+
+
+#install packages in remote server 
+
+once we added remote hosts in ansible controlled server [/etc/ansible/hosts]
+in this cases i added inventory hosts names as test1. test1 have only 1 server. 
+
+
+
+Install git software on remote server using ansible. 
+
+
+1). ansible test1 -b -m yum -a  "name=git state=installed"
+  -b ==  become a root or sudoers (escalate permissions)
+  -m ==  module or task perform
+  -a ==  arguments to pass while installing the softwares. 
+
+2) ansible test1 -b -m yum -a  "name=git state=absent"
+
+ it will uninstall the software. 
+
+

@@ -1,0 +1,40 @@
+# 
+how can we check what certs are providing by java by default 
+
+
+install java
+
+location = /opt/jdk/jre/lib/security/cacerts
+
+
+so we can check the certs by using 
+
+keytool -keystore /opt/jdk/jre/lib/security/cacerts -v -list 
+
+ 
+or 
+
+keytool -list -keystore cacerts
+
+
+if I want to add some certs to existing java trust store then we have to the certs using this command. 
+
+
+get the .crt like which crt you want to add to cacrt
+
+then run this command 
+
+keytool -keystore cacerts -importcert -alias blt -file /opt/jdk/jre/lib/security/blt.crt 
+
+
+this is importing cert into your certficate store. enter password "ch"
+
+then count the certs again using the command 
+
+
+keytool -list -keystore cacert
+
+
+so this how we use to add companies certs to truststore 
+
+
